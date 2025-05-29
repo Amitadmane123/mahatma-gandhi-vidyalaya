@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+</head>
+<body>
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required><br><br>
+    <input type="email" name="email" placeholder="Your Email" required><br><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+    <button type="submit">Send</button>
+  </form>
+  
+  <p id="response"></p>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwAUbxKtQB-d0e5Rhfy3JZFuM9ErSGt5uV_NwUt6TA_sY_OkEZ60EBlSxC5KQyAhDli/exec';
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = this.name.value;
+      const email = this.email.value;
+      const message = this.message.value;
+
+      const url = `${scriptURL}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`;
+
+      fetch(url)
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('response').innerText = 'Message sent successfully!';
+          this.reset();
+        })
+        .catch(err => {
+          document.getElementById('response').innerText = 'Something went wrong.';
+          console.error(err);
+        });
+    });
+  </script>
+</body>
+</html>
