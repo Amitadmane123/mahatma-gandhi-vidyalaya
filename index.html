@@ -67,6 +67,15 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- ms clarity  -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rsl9vht8u4");
+  </script>
   </head>
 
   <body>
@@ -1275,7 +1284,7 @@
 
     <script>
       // Replace this with your own Google Apps Script Web App URL
-      const scriptURL = "https://script.google.com/macros/s/AKfycbwAUbxKtQB-d0e5Rhfy3JZFuM9ErSGt5uV_NwUt6TA_sY_OkEZ60EBlSxC5KQyAhDli/exec"; 
+      const scriptURL = "https://script.google.com/macros/s/AKfycby0K-nHUx1yLdOXrv25C_C96BvO7GgPNRKjvQxQ7Osm3apa10NHArmhBuOUU8zoY2G2/exec"; 
       const form = document.querySelector(".contact-page-form form"); 
       form.addEventListener("submit", function (e) { 
         e.preventDefault(); 
@@ -1286,7 +1295,7 @@
         // "subject" is your Address field 
         const message = form.message.value.trim(); 
         const url = scriptURL + `?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&subject=${encodeURIComponent(address)}&message=${encodeURIComponent(message)}`; 
-        fetch(url) .then((res) => res.text()) .then((response) => { alert("Message sent successfully!"); form.reset(); }) .catch((err) => { console.error("Error!", err.message); alert("Something went wrong!"); }); });
+        fetch(url) .then((res) => res.text()) .then((response) => { alert("Thanks for showing interest! We look forward to connecting with you soon."); form.reset(); }) .catch((err) => { console.error("Error!", err.message); }); });
     </script>
 
     <!-- back to top script start -->
