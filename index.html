@@ -8,6 +8,7 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="./Assets/WhatsApp-Image-2025-05-20-at-12.13.55_7ac66f95.svg" sizes="32x32" type="image/png">
 
     <!-- font awesome -->
     <link
@@ -1449,6 +1450,23 @@
       // Init on page load (assumes "All" is active by default)
       document.addEventListener("DOMContentLoaded", showInitialAllItems);
     </script>
+    <!-- navbar script started -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+        navLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
+          });
+        });
+      });
+    </script>
+    <!-- navbar script end -->
 
     <!-- portfolio section script end -->
 
